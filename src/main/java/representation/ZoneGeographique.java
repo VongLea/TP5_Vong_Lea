@@ -15,20 +15,20 @@ public class ZoneGeographique {
 
 	@Override
 	public String toString() {
-		return "ZoneGeographique{" + "numero=" + numero + ", nom=" + nom + ", indemniteRepas=" + indemniteRepas + '}';
+		return "ZoneGeographique{" + "numero=" + this.numero + ", nom=" + this.nom + ", indemniteRepas=" + this.indemniteRepas + '}';
 	}
 		
 	
 	public int getNumero() {
-		return numero;
+		return this.numero;
 	}
 
 	public String getNom() {
-		return nom;
+		return this.nom;
 	}
 
 	public float getIndemniteRepas() {
-		return indemniteRepas;
+		return this.indemniteRepas;
 	}
 
 	public void setIndemniteRepas(float indemniteRepas) {
