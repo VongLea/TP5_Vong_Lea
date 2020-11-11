@@ -55,14 +55,10 @@ public class Representant {
 
 	public ZoneGeographique getSecteur() {
             return this.secteur;
-		// TODO: Implémenter cette méthode
-		//throw new UnsupportedOperationException("Pas encore implémenté");
 	}
 
 	public void setSecteur(ZoneGeographique secteur) {
             this.secteur = secteur;
-		// TODO: Implémenter cette méthode
-		//throw new UnsupportedOperationException("Pas encore implémenté");
 	}
 
 	/**
@@ -80,9 +76,6 @@ public class Representant {
 		}
                 
                 setCAMensuel(montant);
-                
-		// TODO: Implémenter cette méthode
-		//throw new UnsupportedOperationException("Pas encore implémenté");
 	}
 
 	/**
@@ -93,8 +86,6 @@ public class Representant {
 	 */
 	public float salaireMensuel(int mois, float pourcentage) {
             return this.salaireFixe + this.secteur.getIndemniteRepas() + (pourcentage * this.getCAMensuel());
-		// TODO: Implémenter cette méthode
-		//throw new UnsupportedOperationException("Pas encore implémenté");
 	}
 
 	@Override
