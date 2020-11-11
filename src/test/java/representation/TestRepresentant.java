@@ -70,7 +70,6 @@ public class TestRepresentant {
 
 	@Test
 	public void testCANegatifImpossible() {
-		
 		try {
 			// On enregistre un CA négatif, que doit-il se passer ?
 			// On s'attend à recevoir une exception
@@ -80,8 +79,24 @@ public class TestRepresentant {
 		} catch (IllegalArgumentException e) {
 			// Si on arrive ici, c'est normal, c'est le comportement attendu
 		}
-
 	}
+        
+        @Test
+        public void testMoisNegatifImpossible() {
+            try {
+                r.enregistrerCA(-1, 50000f);
+                fail("Le mois doit être positif");
+            } catch (IllegalArgumentException e) { }
+            
+        }
+        
+        @Test
+        public void testMois12Impossible() {
+            try {
+                r.enregistrerCA(12, 50000f);
+                fail("Le mois ne doit pas excéder le nombre 11");
+            } catch (IllegalArgumentException e) { }
+        }
 	
 	
 }
