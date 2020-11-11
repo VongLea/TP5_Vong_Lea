@@ -7,7 +7,7 @@ public class Representant {
 	private final String prenom;
 	private String adresse;
 	private float salaireFixe;
-        private float CAMensuel;
+        private float[] CAMensuel = new float[12];
         private ZoneGeographique secteur;
 
 	public Representant(int numero, String nom, String prenom, ZoneGeographique secteur) {
@@ -44,14 +44,6 @@ public class Representant {
 	public void setSalaireFixe(float salaireFixe) {
 		this.salaireFixe = salaireFixe;
 	}
-        
-        public float getCAMensuel() {
-		return this.CAMensuel;
-	}
-
-	public void setCAMensuel(float CAMensuel) {
-		this.CAMensuel = CAMensuel;
-	}
 
 	public ZoneGeographique getSecteur() {
             return this.secteur;
@@ -75,7 +67,7 @@ public class Representant {
 			throw new IllegalArgumentException("Le montant doit être positif ou null");
 		}
                 
-                setCAMensuel(montant);
+                CAMensuel[mois] = montant;
 	}
 
 	/**
@@ -85,7 +77,7 @@ public class Representant {
 	 * @return le salaire pour ce mois, tenant compte du salaire fixe, de l'indemnité repas, et du pourcentage sur CA
 	 */
 	public float salaireMensuel(int mois, float pourcentage) {
-            return this.salaireFixe + this.secteur.getIndemniteRepas() + (pourcentage * this.getCAMensuel());
+            return this.salaireFixe + this.secteur.getIndemniteRepas() + (pourcentage * CAMensuel[mois]);
 	}
 
 	@Override
